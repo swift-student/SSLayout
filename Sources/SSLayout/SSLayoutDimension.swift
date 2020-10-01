@@ -14,4 +14,22 @@ public enum SSLayoutDimension {
     case fractional(CGFloat, relativeTo: NSLayoutDimension)
 }
 
+@available(iOS 9.0, *)
+extension SSLayoutDimension: ExpressibleByFloatLiteral {
+    public typealias FloatLiteralType = CGFloat.FloatLiteralType
+    
+    public init(floatLiteral value: Self.FloatLiteralType) {
+        self = .absolute(CGFloat(floatLiteral: value))
+    }
+}
+
+@available(iOS 9.0, *)
+extension SSLayoutDimension: ExpressibleByIntegerLiteral {
+    public typealias IntegerLiteralType = CGFloat.IntegerLiteralType
+    
+    public init(integerLiteral value: CGFloat.IntegerLiteralType) {
+        self = .absolute(CGFloat(integerLiteral: value))
+    }
+}
+
 #endif
