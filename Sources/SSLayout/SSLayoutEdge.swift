@@ -16,9 +16,9 @@ public enum SSLayoutEdge {
 }
 
 extension ExpressibleByArrayLiteral where ArrayLiteralElement == SSLayoutEdge {
-    static var all: Self { [.top, .leading, .trailing, .bottom] }
-    static var horizontal: Self { [.leading, .trailing] }
-    static var vertical: Self { [.top, .bottom] }
+    public static var all: Self { [.top, .leading, .trailing, .bottom] }
+    public static var horizontal: Self { [.leading, .trailing] }
+    public static var vertical: Self { [.top, .bottom] }
 }
 
 @available(iOS 9.0, *)
