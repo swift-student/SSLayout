@@ -6,7 +6,7 @@ final class SSLayoutTests: XCTestCase {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct
         // results.
-        XCTAssertEqual(SSLayout().text, "Hello, World!")
+//        XCTAssertEqual(SSLayout().text, "Hello, World!")
     }
 
     static var allTests = [
