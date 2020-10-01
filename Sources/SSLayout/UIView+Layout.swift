@@ -56,89 +56,49 @@ extension UIView {
     // MARK: - Position
 
     @discardableResult
-    public func pinTop(to anchor: NSLayoutYAxisAnchor, withPadding padding: SSLayoutSpacing = .equalTo(0)) -> NSLayoutConstraint {
+    public func pinTop(to anchor: NSLayoutYAxisAnchor, withPadding padding: SSLayoutSpacing = 0) -> NSLayoutConstraint {
         pin(self.topAnchor, to: anchor, withPadding: padding)
     }
     
     @discardableResult
-    public func pinTop(to anchor: NSLayoutYAxisAnchor, withPadding padding: CGFloat) -> NSLayoutConstraint {
-        pin(self.topAnchor, to: anchor, withPadding: .equalTo(padding))
-    }
-    
-    @discardableResult
-    public func pinLeading(to anchor: NSLayoutXAxisAnchor, withPadding padding: SSLayoutSpacing = .equalTo(0)) -> NSLayoutConstraint {
+    public func pinLeading(to anchor: NSLayoutXAxisAnchor, withPadding padding: SSLayoutSpacing = 0) -> NSLayoutConstraint {
         pin(self.leadingAnchor, to: anchor, withPadding: padding)
     }
     
     @discardableResult
-    public func pinLeading(to anchor: NSLayoutXAxisAnchor, withPadding padding: CGFloat) -> NSLayoutConstraint {
-        pin(self.leadingAnchor, to: anchor, withPadding: .equalTo(padding))
-    }
-    
-    @discardableResult
-    public func pinTrailing(to anchor: NSLayoutXAxisAnchor, withPadding padding: SSLayoutSpacing = .equalTo(0)) -> NSLayoutConstraint {
+    public func pinTrailing(to anchor: NSLayoutXAxisAnchor, withPadding padding: SSLayoutSpacing = 0) -> NSLayoutConstraint {
         pin(anchor, to: self.trailingAnchor, withPadding: padding)
     }
     
     @discardableResult
-    public func pinTrailing(to anchor: NSLayoutXAxisAnchor, withPadding padding: CGFloat) -> NSLayoutConstraint {
-        pin(anchor, to: self.trailingAnchor, withPadding: .equalTo(padding))
-    }
-    
-    @discardableResult
-    public func pinBottom(to anchor: NSLayoutYAxisAnchor, withPadding padding: SSLayoutSpacing = .equalTo(0)) -> NSLayoutConstraint {
+    public func pinBottom(to anchor: NSLayoutYAxisAnchor, withPadding padding: SSLayoutSpacing = 0) -> NSLayoutConstraint {
         pin(anchor, to: self.bottomAnchor, withPadding: padding)
     }
     
     @discardableResult
-    public func pinBottom(to anchor: NSLayoutYAxisAnchor, withPadding padding: CGFloat) -> NSLayoutConstraint {
-        pin(anchor, to: self.bottomAnchor, withPadding: .equalTo(padding))
-    }
-    
-    @discardableResult
-    public func pinFirstBaseline(to anchor: NSLayoutYAxisAnchor, withPadding padding: SSLayoutSpacing = .equalTo(0)) -> NSLayoutConstraint {
+    public func pinFirstBaseline(to anchor: NSLayoutYAxisAnchor, withPadding padding: SSLayoutSpacing = 0) -> NSLayoutConstraint {
         pin(self.firstBaselineAnchor, to: anchor, withPadding: padding)
     }
     
     @discardableResult
-    public func pinFirstBaseline(to anchor: NSLayoutYAxisAnchor, withPadding padding: CGFloat) -> NSLayoutConstraint {
-        pin(self.firstBaselineAnchor, to: anchor, withPadding: .equalTo(padding))
-    }
-    
-    @discardableResult
-    public func pinLastBaseline(to anchor: NSLayoutYAxisAnchor, withPadding padding: SSLayoutSpacing = .equalTo(0)) -> NSLayoutConstraint {
+    public func pinLastBaseline(to anchor: NSLayoutYAxisAnchor, withPadding padding: SSLayoutSpacing = 0) -> NSLayoutConstraint {
         pin(self.lastBaselineAnchor, to: anchor, withPadding: padding)
     }
     
     @discardableResult
-    public func pinLastBaseline(to anchor: NSLayoutYAxisAnchor, withPadding padding: CGFloat) -> NSLayoutConstraint {
-        pin(self.lastBaselineAnchor, to: anchor, withPadding: .equalTo(padding))
-    }
-    
-    @discardableResult
-    public func alignCenterX(to anchor: NSLayoutXAxisAnchor, withOffset offset: SSLayoutSpacing = .equalTo(0)) -> NSLayoutConstraint {
+    public func alignCenterX(to anchor: NSLayoutXAxisAnchor, withOffset offset: SSLayoutSpacing = 0) -> NSLayoutConstraint {
         pin(self.centerXAnchor, to: anchor, withPadding: offset)
     }
     
     @discardableResult
-    public func alignCenterX(to anchor: NSLayoutXAxisAnchor, withOffset offset: CGFloat) -> NSLayoutConstraint {
-        pin(self.centerXAnchor, to: anchor, withPadding: .equalTo(offset))
-    }
-    
-    @discardableResult
-    public func alignCenterY(to anchor: NSLayoutYAxisAnchor, withOffset offset: SSLayoutSpacing = .equalTo(0)) -> NSLayoutConstraint {
+    public func alignCenterY(to anchor: NSLayoutYAxisAnchor, withOffset offset: SSLayoutSpacing = 0) -> NSLayoutConstraint {
         pin(self.centerYAnchor, to: anchor, withPadding: offset)
-    }
-    
-    @discardableResult
-    public func alignCenterY(to anchor: NSLayoutYAxisAnchor, withOffset offset: CGFloat) -> NSLayoutConstraint {
-        pin(self.centerYAnchor, to: anchor, withPadding: .equalTo(offset))
     }
     
     @discardableResult
     public func pinEdges(_ edges: [SSLayoutEdge],
                          toEdgesOf pinnable: SSLayoutEdgePinnable,
-                         withPadding padding: SSLayoutSpacing = .equalTo(0)) -> [NSLayoutConstraint] {
+                         withPadding padding: SSLayoutSpacing = 0) -> [NSLayoutConstraint] {
         var constraints: [NSLayoutConstraint] = []
         
         for edge in edges {
@@ -213,7 +173,7 @@ extension UIView {
     
     private func pin<AnchorType>(_ anchor1: NSLayoutAnchor<AnchorType>,
                                to anchor2: NSLayoutAnchor<AnchorType>,
-                               withPadding padding: SSLayoutSpacing = .equalTo(0)) -> NSLayoutConstraint {
+                               withPadding padding: SSLayoutSpacing = 0) -> NSLayoutConstraint {
         let constraint: NSLayoutConstraint
         
         switch padding {
