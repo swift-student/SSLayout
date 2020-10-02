@@ -5,8 +5,10 @@
 //  Created by Shawn Gee on 10/2/20.
 //
 
-import Foundation
+#if canImport(UIKit)
+import UIKit
 
+@available(iOS 9.0, *)
 extension UIStackView {
     public static func hStack(_ views: UIView...) -> UIStackView {
         let hStack = UIStackView(arrangedSubviews: views)
@@ -60,4 +62,6 @@ extension UIStackView {
         return self
     }
 }
+
+#endif
 
