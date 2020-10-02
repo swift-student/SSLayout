@@ -74,7 +74,7 @@ extension UIStackView {
     /// - Returns: The UIStackView that this method is called on with the corresponding `directionalLayoutMargins`
     ///  updated with the edges and amount passed in, and `isLayoutMarginsRelativeArrangment` set to true.
     @discardableResult
-    public func padding(_ edges: [SSLayoutEdge], _ amount: CGFloat = 8) -> UIStackView {
+    public func padding(_ edges: [SSLayoutEdge], by amount: CGFloat = 8) -> UIStackView {
         for edge in edges {
             switch edge {
             case .top:
