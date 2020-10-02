@@ -150,7 +150,6 @@ extension UIView {
             multiplier: multiplier,
             constant: 0
         ).activate()
-        
     }
     
     public func centerVerticallyInSuperview(multiplier: CGFloat = 1) -> NSLayoutConstraint {
