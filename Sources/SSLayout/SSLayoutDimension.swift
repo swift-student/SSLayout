@@ -10,8 +10,13 @@ import UIKit
 
 @available(iOS 9.0, *)
 public enum SSLayoutDimension {
-    case absolute(CGFloat)
-    case fractional(CGFloat, relativeTo: NSLayoutDimension)
+    public enum Modifier {
+        case orGreater
+        case orLess
+    }
+    
+    case absolute(CGFloat, _ modifier: Modifier? = nil)
+    case fractional(CGFloat, relativeTo: NSLayoutDimension, _ modifier: Modifier? = nil)
 }
 
 @available(iOS 9.0, *)

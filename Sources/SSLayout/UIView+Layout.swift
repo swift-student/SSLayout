@@ -18,10 +18,24 @@ extension UIView {
         let widthConstraint: NSLayoutConstraint
         
         switch dimension {
-        case .absolute(let constant):
-            widthConstraint = widthAnchor.constraint(equalToConstant: constant)
-        case .fractional(let multiplier, let dimension):
-            widthConstraint = widthAnchor.constraint(equalTo: dimension, multiplier: multiplier)
+        case .absolute(let constant, let modifier):
+            switch modifier {
+            case nil:
+                widthConstraint = widthAnchor.constraint(equalToConstant: constant)
+            case .orGreater:
+                widthConstraint = widthAnchor.constraint(greaterThanOrEqualToConstant: constant
+            case .orLess:
+                widthConstraint = widthAnchor.constraint(lessThanOrEqualToConstant: constant
+            }
+        case .fractional(let multiplier, let dimension, let modifier):
+            switch modifier {
+            case nil:
+                widthConstraint = widthAnchor.constraint(equalTo: dimension, multiplier: multiplier)
+            case .orGreater:
+                widthConstraint = widthAnchor.constraint(greaterThanOrEqualTo: dimension, multiplier: multiplier)
+            case .orLess:
+                widthConstraint = widthAnchor.constraint(lessThanOrEqualTo: dimension, multiplier: multiplier)
+            }
         }
         
         widthConstraint.isActive = true
@@ -33,10 +47,24 @@ extension UIView {
         let heightConstraint: NSLayoutConstraint
         
         switch dimension {
-        case .absolute(let constant):
-            heightConstraint = heightAnchor.constraint(equalToConstant: constant)
-        case .fractional(let multiplier, let dimension):
-            heightConstraint = heightAnchor.constraint(equalTo: dimension, multiplier: multiplier)
+        case .absolute(let constant, let modifier):
+            switch modifier {
+            case nil:
+                heightConstraint = heightAnchor.constraint(equalToConstant: constant)
+            case .orGreater:
+                heightConstraint = heightAnchor.constraint(greaterThanOrEqualToConstant: constant
+            case .orLess:
+                heightConstraint = heightAnchor.constraint(lessThanOrEqualToConstant: constant
+            }
+        case .fractional(let multiplier, let dimension, let modifier):
+            switch modifier {
+            case nil:
+                heightConstraint = heightAnchor.constraint(equalTo: dimension, multiplier: multiplier)
+            case .orGreater:
+                heightConstraint = heightAnchor.constraint(greaterThanOrEqualTo: dimension, multiplier: multiplier)
+            case .orLess:
+                heightConstraint = heightAnchor.constraint(lessThanOrEqualTo: dimension, multiplier: multiplier)
+            }
         }
         
         heightConstraint.isActive = true
