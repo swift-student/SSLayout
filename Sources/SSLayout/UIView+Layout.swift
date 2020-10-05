@@ -23,9 +23,9 @@ extension UIView {
             case nil:
                 widthConstraint = widthAnchor.constraint(equalToConstant: constant)
             case .orGreater:
-                widthConstraint = widthAnchor.constraint(greaterThanOrEqualToConstant: constant
+                widthConstraint = widthAnchor.constraint(greaterThanOrEqualToConstant: constant)
             case .orLess:
-                widthConstraint = widthAnchor.constraint(lessThanOrEqualToConstant: constant
+                widthConstraint = widthAnchor.constraint(lessThanOrEqualToConstant: constant)
             }
         case .fractional(let multiplier, let dimension, let modifier):
             switch modifier {
@@ -52,9 +52,9 @@ extension UIView {
             case nil:
                 heightConstraint = heightAnchor.constraint(equalToConstant: constant)
             case .orGreater:
-                heightConstraint = heightAnchor.constraint(greaterThanOrEqualToConstant: constant
+                heightConstraint = heightAnchor.constraint(greaterThanOrEqualToConstant: constant)
             case .orLess:
-                heightConstraint = heightAnchor.constraint(lessThanOrEqualToConstant: constant
+                heightConstraint = heightAnchor.constraint(lessThanOrEqualToConstant: constant)
             }
         case .fractional(let multiplier, let dimension, let modifier):
             switch modifier {
