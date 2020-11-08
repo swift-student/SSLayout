@@ -156,7 +156,8 @@ extension UIView {
         return pinEdges(.all, toEdgesOf: superview)
     }
     
-    public func fillSuperviewSafeArea() {
+	@discardableResult
+    public func fillSuperviewSafeArea() -> [NSLayoutConstraint] {
         guard let superview = superview else {
             preconditionFailure("\(Self.self) has no superview to fill.")
         }
@@ -164,6 +165,7 @@ extension UIView {
         pinEdges(.all, toEdgesOf: superview.safeAreaLayoutGuide)
     }
     
+	@discardableResult
     public func centerHorizontallyInSuperview(multiplier: CGFloat = 1) -> NSLayoutConstraint {
         guard let superview = superview else {
             preconditionFailure("\(Self.self) has no superview to center in.")
@@ -180,6 +182,7 @@ extension UIView {
         ).activate()
     }
     
+	@discardableResult
     public func centerVerticallyInSuperview(multiplier: CGFloat = 1) -> NSLayoutConstraint {
         guard let superview = superview else {
             preconditionFailure("\(Self.self) has no superview to center in.")
