@@ -162,7 +162,7 @@ extension UIView {
             preconditionFailure("\(Self.self) has no superview to fill.")
         }
         
-        pinEdges(.all, toEdgesOf: superview.safeAreaLayoutGuide)
+        return pinEdges(.all, toEdgesOf: superview.safeAreaLayoutGuide)
     }
     
 	@discardableResult
